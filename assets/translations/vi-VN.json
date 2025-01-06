@@ -1,0 +1,15 @@
+{
+  "hello": "Xin chào",
+  "gender_male": "Male",
+  "gender_female": "Female",
+  "gender_other": "Other gender",
+  "home_tab_feed": "NHa",
+  "home_tab_search": "Tim kiesm",
+  "home_tab_favourite": "Yeu thich",
+  "home_tab_setting": "Cai dat",
+  "label_ok": "OK",
+  "label_cancel": "Cancel",
+  "not_found_data": "Not found data",
+  "grant_permission": "Grant permission",
+  "api_error_label" : "API Error"
+}

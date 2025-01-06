@@ -1,0 +1,15 @@
+{
+  "hello": "こんにちは",
+  "gender_male": "Male",
+  "gender_female": "Female",
+  "gender_other": "Other gender",
+  "home_tab_feed": "Feed",
+  "home_tab_search": "Search",
+  "home_tab_favourite": "Favourite",
+  "home_tab_setting": "Setting",
+  "label_ok": "OK",
+  "label_cancel": "Cancel",
+  "not_found_data": "Not found data",
+  "grant_permission": "Grant permission",
+  "api_error_label" : "API Error"
+}
