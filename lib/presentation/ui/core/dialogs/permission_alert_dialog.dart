@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 import 'package:flutter_clean_riverpod/presentation/ui/core/app_text.dart';
 
 import '../../../../generated/locale_keys.g.dart';
-import '../../../theme/theme_color.dart';
+import '../../../theme/app_theme_extension.dart';
 import '../app_button.dart';
 
 class PermissionAlertDialog extends StatelessWidget {
@@ -25,8 +25,8 @@ class PermissionAlertDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       elevation: 0.0,
-      backgroundColor: context.color(
-        AppColor.primaryBackground,
+      backgroundColor: context.getColor(
+        AppPalette.primaryBackground,
       ),
       child: _dialogContent,
     );
@@ -60,7 +60,7 @@ class PermissionAlertDialog extends StatelessWidget {
             AppButton(
               title: LocaleKeys.grant_permission.tr(),
               titleColor: Colors.white,
-              backgroundColor: context.color(AppColor.mainColor),
+              backgroundColor: context.getColor(AppPalette.mainColor),
               onTap: () {
                 Navigator.of(context).pop<bool>(true);
               },
@@ -71,8 +71,8 @@ class PermissionAlertDialog extends StatelessWidget {
             AppButton(
               title: LocaleKeys.label_cancel.tr(),
               height: 50.0,
-              titleColor: context.color(AppColor.secondaryButtonTitle),
-              backgroundColor: context.color(AppColor.secondaryColor),
+              titleColor: context.getColor(AppPalette.secondaryButtonTitle),
+              backgroundColor: context.getColor(AppPalette.secondaryColor),
               onTap: () {
                 Navigator.of(context).pop<bool>(false);
               },

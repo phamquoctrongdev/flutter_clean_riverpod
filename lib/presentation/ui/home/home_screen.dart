@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 import 'package:flutter_clean_riverpod/presentation/ui/home/home_controller.dart';
 import 'package:flutter_clean_riverpod/presentation/ui/home/widget/country_item_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,7 +18,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   void initState() {
     super.initState();
     scheduleMicrotask(
-      () => context.openLoadingMask(),
+      () => context.displayLoader(),
     );
   }
 
@@ -29,9 +29,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       homeControllerProvider,
       (previous, next) {
         if (next.isLoading) {
-          context.openLoadingMask();
+          context.displayLoader();
         } else {
-          context.closeLoadingMask();
+          context.closeLoader();
         }
       },
     );
@@ -39,7 +39,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       body: state.hasValue
           ? ListView.separated(
               itemBuilder: (context, index) => CountryItemView(
-                country: state.requireValue.countries[index],
+                data: state.requireValue.countries[index],
               ),
               itemCount: state.requireValue.countries.length,
               separatorBuilder: (context, index) => const SizedBox(

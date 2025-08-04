@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 import 'package:flutter_clean_riverpod/presentation/ui/core/app_text.dart';
 
 import '../../../../generated/locale_keys.g.dart';
-import '../../../theme/theme_color.dart';
+import '../../../theme/app_theme_extension.dart';
 import '../app_button.dart';
 
 class AppAlertDialog extends StatelessWidget {
@@ -37,7 +37,7 @@ class AppAlertDialog extends StatelessWidget {
           Container(
             margin: const EdgeInsets.all(24.0),
             decoration: BoxDecoration(
-              color: context.color(AppColor.primaryTextFieldBackground),
+              color: context.getColor(AppPalette.primaryTextFieldBackground),
               borderRadius: const BorderRadius.all(
                 Radius.circular(16.0),
               ),
@@ -97,8 +97,8 @@ class AppAlertDialog extends StatelessWidget {
                 child: AppButton(
                   width: 100.0,
                   title: cancelText ?? LocaleKeys.label_cancel.tr(),
-                  titleColor: context.color(AppColor.secondaryButtonTitle),
-                  backgroundColor: context.color(AppColor.secondaryColor),
+                  titleColor: context.getColor(AppPalette.secondaryButtonTitle),
+                  backgroundColor: context.getColor(AppPalette.secondaryColor),
                   padding: EdgeInsets.symmetric(
                     vertical: 8.0,
                     horizontal: 16.0,
@@ -117,7 +117,7 @@ class AppAlertDialog extends StatelessWidget {
                   width: 100.0,
                   title: confirmText ?? LocaleKeys.label_ok.tr(),
                   titleColor: Colors.white,
-                  backgroundColor: context.color(AppColor.mainColor),
+                  backgroundColor: context.getColor(AppPalette.mainColor),
                   padding: EdgeInsets.symmetric(
                     vertical: 8.0,
                     horizontal: 16.0,

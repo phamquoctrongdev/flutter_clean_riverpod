@@ -16,8 +16,8 @@ class AppButton extends StatelessWidget {
   });
 
   final String title;
-  final Color titleColor;
-  final Color backgroundColor;
+  final Color? titleColor;
+  final Color? backgroundColor;
   final VoidCallback onTap;
   final double? width;
   final double? height;

@@ -15,6 +15,20 @@ class CountryRepositoryImpl implements CountryRepository {
     return client.request(
         endpoint: APIEndpoint.allCountries,
         method: ApiMethod.get,
+        queryParameters: {
+          'fields': [
+            'name',
+            'flags',
+            'capital',
+            'area',
+            'region',
+            'subregion',
+            'population',
+            'postalCode',
+            'timezones',
+            'borders',
+          ],
+        },
         decoder: (response) => (response.data as List)
             .map((element) => CountryResponse.fromJson(element))
             .toList());

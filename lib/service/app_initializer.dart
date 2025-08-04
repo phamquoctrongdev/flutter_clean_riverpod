@@ -14,7 +14,8 @@ class AppInitializer {
 
   static final getInstance = _instance;
 
-  // Ensure this function called once time.
+  /// Ensure [ensureInitialized] function called once time.
+
   bool _isInitialized = false;
 
   Future<void> ensureInitialized() async {

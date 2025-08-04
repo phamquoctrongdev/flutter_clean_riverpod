@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 
-import '../../theme/theme_color.dart';
+import '../../theme/app_theme_extension.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -43,8 +43,8 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: context.color(AppColor.mainColor),
-      cursorErrorColor: context.color(AppColor.mainColor),
+      cursorColor: context.getColor(AppPalette.mainColor),
+      cursorErrorColor: context.getColor(AppPalette.mainColor),
       controller: controller,
       focusNode: focusNode,
       obscureText: isPassword ?? false,
@@ -62,7 +62,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         prefixIcon: prefixIcon,
-        prefixIconColor: context.color(AppColor.primaryTextColor),
+        prefixIconColor: context.getColor(AppPalette.primaryTextColor),
         suffixIcon: suffixIcon != null
             ? IconButton(
                 splashColor: Colors.transparent,
@@ -71,13 +71,13 @@ class CustomTextField extends StatelessWidget {
                 onPressed: onSuffixIconPressed,
               )
             : null,
-        suffixIconColor: context.color(AppColor.primaryTextColor),
+        suffixIconColor: context.getColor(AppPalette.primaryTextColor),
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(8.0),
         ),
         filled: true,
-        fillColor: context.color(AppColor.primaryTextFieldBackground),
+        fillColor: context.getColor(AppPalette.primaryTextFieldBackground),
         errorStyle: TextStyle(
           color: Colors.red.shade500,
         ),

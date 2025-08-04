@@ -11,5 +11,7 @@
   "label_cancel" : "Cancel",
   "not_found_data" : "Not found data",
   "grant_permission" : "Grant permission",
-  "api_error_label" : "API Error"
+  "api_error_label" : "API Error",
+  "capital" : "Capital: ",
+  "population" : "Population: "
 }

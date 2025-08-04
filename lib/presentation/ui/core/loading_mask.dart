@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 
-import '../../theme/theme_color.dart';
+import '../../theme/app_theme_extension.dart';
 
 class LoadingMask extends StatefulWidget {
   const LoadingMask({super.key, required this.child});
@@ -49,7 +49,7 @@ class LoadingMaskState extends State<LoadingMask> {
         if (_isLoading)
           Center(
             child: CircularProgressIndicator(
-              color: context.color(AppColor.mainColor),
+              color: context.getColor(AppPalette.mainColor),
             ),
           ),
       ],

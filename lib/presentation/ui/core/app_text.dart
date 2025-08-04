@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/presentation/common/app_extension.dart';
+import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
 
-import '../../theme/theme_color.dart';
+import '../../theme/app_theme_extension.dart';
 class AppText extends StatelessWidget {
   const AppText({
     super.key,
@@ -28,7 +28,7 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = this.color ?? context.color(AppColor.primaryTextColor);
+    final color = this.color ?? context.getColor(AppPalette.primaryTextColor);
     return Text(
       text,
       style: style ??

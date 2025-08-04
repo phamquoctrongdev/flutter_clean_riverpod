@@ -5,12 +5,12 @@ import 'package:flutter_clean_riverpod/presentation/ui/core/loading_mask.dart';
 
 import '../../data/error/api_error.dart';
 import '../../generated/locale_keys.g.dart';
-import '../theme/theme_color.dart';
+import '../theme/app_theme_extension.dart';
 
-extension CustomThemeExtension on BuildContext {
-  Color color(AppColor key) {
-    final theme = Theme.of(this).extension<ThemeColor>();
-    return theme?.colors?[key] ?? Colors.black;
+extension BuildContextExt on BuildContext {
+  Color? getColor(AppPalette key) {
+    final theme = Theme.of(this).extension<AppThemeExtension>();
+    return theme?.getColor(key);
   }
 
   bool get isDarkTheme {
@@ -30,11 +30,11 @@ extension CustomThemeExtension on BuildContext {
     return null;
   }
 
-  void openLoadingMask() {
+  void displayLoader() {
     findAncestorStateOfType<LoadingMaskState>()?.show();
   }
 
-  void closeLoadingMask() {
+  void closeLoader() {
     findAncestorStateOfType<LoadingMaskState>()?.close();
   }
 }
