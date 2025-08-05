@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_riverpod/generated/locale_keys.g.dart';
 import 'package:flutter_clean_riverpod/presentation/theme/app_theme.dart';
 import 'package:flutter_clean_riverpod/presentation/ui/core/app_loader.dart';
 import 'package:flutter_clean_riverpod/service/app_initializer.dart';
@@ -21,7 +18,7 @@ void main() async {
         supportedLocales: const [
           AppConstants.enUS,
           AppConstants.viVN,
-          AppConstants.jaJP
+          AppConstants.jaJP,
         ],
         path: AppConstants.assetTranslationPath,
         fallbackLocale: AppConstants.enUS,
@@ -46,7 +43,7 @@ class MyApp extends ConsumerWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      routerConfig: AppRouter.instance.router,
+      routerConfig: AppRouter.router,
       builder: (context, child) {
         if (child == null) {
           return const SizedBox();

@@ -18,27 +18,20 @@ class CountryItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: context.getColor(AppPalette.mainColor),
+      color: context.getColor(AppPalette.secondaryBackground),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           spacing: 8.0,
           children: [
-            DecoratedBox(
-              decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 0.1,
-                )
-              ]),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: 128.0,
-                  maxHeight: 96.0,
-                ),
+            SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100.0),
                 child: CachedNetworkImage(
                   imageUrl: data.flags.png,
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                   // width: 128.0,
                   // height: 96.0,
                 ),

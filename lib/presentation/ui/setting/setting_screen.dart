@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_riverpod/presentation/router/app_routes.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../generated/locale_keys.g.dart';
 
@@ -9,6 +11,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () => context.push(AppRoutes.detailSetting.path)),
       appBar: AppBar(
         title: Text(LocaleKeys.home_tab_setting.tr()),
       ),
