@@ -1,4 +1,8 @@
 {
+  "oops" : "Oops...!",
+  "api_error" : "Connect to server error",
+  "internet_error" : "No internet connection!",
+  "unknown_error" : "Unknown error",
   "hello": "Xin chào",
   "gender_male": "Male",
   "gender_female": "Female",
@@ -11,7 +15,6 @@
   "label_cancel": "Cancel",
   "not_found_data": "Not found data",
   "grant_permission": "Grant permission",
-  "api_error_label" : "API Error",
   "capital" : "Capital: ",
   "population" : "Population: "
 }

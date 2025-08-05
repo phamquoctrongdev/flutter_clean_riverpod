@@ -5,7 +5,7 @@ part 'flag_country_response.freezed.dart';
 part 'flag_country_response.g.dart';
 
 @freezed
-class FlagCountryResponse with _$FlagCountryResponse {
+abstract class FlagCountryResponse with _$FlagCountryResponse {
   const factory FlagCountryResponse({
     required String png,
     required String svg,

@@ -8,7 +8,7 @@ part 'country_response.freezed.dart';
 part 'country_response.g.dart';
 
 @freezed
-class CountryResponse with _$CountryResponse {
+abstract class CountryResponse with _$CountryResponse {
   const factory CountryResponse({
     required NameCountryResponse name,
     @Default([]) List<String> capital,

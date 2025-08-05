@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_riverpod/generated/locale_keys.g.dart';
 import 'package:flutter_clean_riverpod/presentation/theme/app_theme.dart';
-import 'package:flutter_clean_riverpod/presentation/ui/core/loading_mask.dart';
+import 'package:flutter_clean_riverpod/presentation/ui/core/app_loader.dart';
 import 'package:flutter_clean_riverpod/service/app_initializer.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -48,7 +51,7 @@ class MyApp extends ConsumerWidget {
         if (child == null) {
           return const SizedBox();
         } else {
-          return LoadingMask(child: child);
+          return AppLoader(child: child);
         }
       },
     );

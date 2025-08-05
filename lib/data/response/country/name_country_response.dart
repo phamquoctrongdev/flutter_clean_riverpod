@@ -4,7 +4,7 @@ part 'name_country_response.freezed.dart';
 part 'name_country_response.g.dart';
 
 @freezed
-class NameCountryResponse with _$NameCountryResponse {
+abstract class NameCountryResponse with _$NameCountryResponse {
   const factory NameCountryResponse({
     required String common,
     required String official,

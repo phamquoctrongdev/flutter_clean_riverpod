@@ -45,13 +45,7 @@ lib/
 
 ## 1. All in one terminal: clean, get packages, generate necessary classes/files.
    ```bash
-   make
-   ```
-   `fvm` default is **_true_**.
-   
-   If not using `fvm`, then:
-   ```bash
-   make USE_FVM=false
+   (fvm) dart run tool/setup.dart
    ```
 
 ## 2. Run each command separately:
@@ -60,19 +54,11 @@ lib/
    ```
    (fvm) flutter clean
    ```
-   or
-   ```
-   make clean
-   ```
    
    ### 🚀 Get dependencies:
    
    ```
    (fvm) flutter pub get
-   ```
-   or
-   ```
-   make pub_get
    ```
    
    ### 🚀 Generate localization files:
@@ -80,32 +66,19 @@ lib/
    ```
    (fvm) dart run easy_localization:generate -S assets/translations & (fvm) dart run easy_localization:generate -S assets/translations -f keys -o locale_keys.g.dart
    ```
-   or
-   ```
-   make localization
-   ```
    
    ### 🚀 Generate auto-generated files (such as `*.freezed.dart` , `*.g.dart` ...):
    ```
    (fvm) dart run build_runner build -d
    ```
-   or
-   ```
-   make build_runner
-   ```
+   
    ### 🚀 Run unit test:
    ```
    (fvm) flutter test
    ```
-   or
-   ```
-   make unit_test
-   ```
+   
    ### 🚀 Run test coverage and open the report on browser:
    ```
    (fvm) flutter test --coverage && genhtml coverage/lcov.info -o coverage/html && open coverage/html/index.html
    ```
-   or
-   ```
-   make test_coverage
-   ```
+   ---

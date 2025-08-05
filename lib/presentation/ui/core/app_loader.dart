@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_riverpod/presentation/common/build_context_ext.dart';
+import 'package:flutter_clean_riverpod/presentation/theme/app_theme_extension.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../../theme/app_theme_extension.dart';
-
-class LoadingMask extends StatefulWidget {
-  const LoadingMask({super.key, required this.child});
+class AppLoader extends StatefulWidget {
+  const AppLoader({super.key, required this.child});
 
   final Widget child;
 
-  static LoadingMaskState of(BuildContext context) {
-    return context.findAncestorStateOfType<LoadingMaskState>()!;
+  static AppLoaderState of(BuildContext context) {
+    return context.findAncestorStateOfType<AppLoaderState>()!;
   }
 
   @override
-  State<LoadingMask> createState() => LoadingMaskState();
+  State<AppLoader> createState() => AppLoaderState();
 }
 
-class LoadingMaskState extends State<LoadingMask> {
+class AppLoaderState extends State<AppLoader> {
   bool _isLoading = false;
 
   void show() {
@@ -47,10 +47,8 @@ class LoadingMaskState extends State<LoadingMask> {
             child: ModalBarrier(dismissible: false, color: Colors.black),
           ),
         if (_isLoading)
-          Center(
-            child: CircularProgressIndicator(
-              color: context.getColor(AppPalette.mainColor),
-            ),
+          SpinKitSpinningLines(
+            color: context.getColor(AppPalette.secondaryColor),
           ),
       ],
     );
